@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: sahilverma02
+Build-Jdk: 17.0.2
+Implementation-Title: librarymanagement
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: com.nagarro
+Implementation-URL: https://spring.io/projects/spring-boot/librarymanage
+ ment
+Created-By: Maven Integration for Eclipse
+
