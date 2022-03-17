@@ -1,0 +1,17 @@
+node {
+      def mvnHome = tool 'MVN 3.8'
+     
+    stage('Checkout'){
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/sahilverma3120/Assignment-5-Nagarro-DevOps']]])
+    }
+    
+    stage('build') {
+          bat "${mvnHome}/bin/mvn clean install -f libraryclient/pom.xml"
+    }
+    
+    stage('code Quality'){
+         withSonarQubeEnv('SonarQube') {
+         bat "${mvnHome}/bin/mvn  sonar:sonar -f libraryclient/pom.xml"
+        }
+    }
+}
